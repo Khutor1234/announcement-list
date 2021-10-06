@@ -1,0 +1,17 @@
+.announcement-list {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.announcement-list li{
+  list-style-type: none;
+  margin-top: 40px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+}
