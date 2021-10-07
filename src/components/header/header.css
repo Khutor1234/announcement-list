@@ -11,11 +11,18 @@
     font-size: 20px;
 }
 
-.header-search{
+.header-search, .header-btn{
     height: 42px;
+    width: 150px;
     padding-left: 10px;
     border: 2px solid #7BA7AB;
     border-radius: 5px;
     outline: none;
     background: #F9F0DA;
-    color: #9E9C9C;}
+    color: #9E9C9C;
+}
+
+.header-btn{
+  margin-left: 20px;
+  color:black
+}

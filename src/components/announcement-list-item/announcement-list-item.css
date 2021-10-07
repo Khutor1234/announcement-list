@@ -4,13 +4,13 @@
 }
 
 .announcement-details{
-    padding: 0;
+    padding: 10px;
 }
 
 .announcement-cover{
     width: 300px;
     object-fit:cover;
-    height: 300px;
+    height: 200px;
 }
 
 .announcement-header{
@@ -27,4 +27,19 @@
 .announcement-title{
     font-size: 20px;
     font-weight: bold;
+}
+
+.announcement-buttons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    background-color: aqua;
+    width: 130px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    background: #F9F0DA;
+    color: #000;
 }
