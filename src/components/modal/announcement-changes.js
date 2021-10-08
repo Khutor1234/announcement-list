@@ -4,7 +4,6 @@ import {newImg, newTitle, newDescription, onSaveChange, modalClosed} from '../..
 import './modal.css';
 
 const AnnouncementChanges= ({changedItem, modal, modalClosed, newTitle, newImg, newDescription, onSaveChange}) => {
-  console.log(changedItem)
   
   if(modal === 'changes'){
     const {title, coverImage, description} = changedItem

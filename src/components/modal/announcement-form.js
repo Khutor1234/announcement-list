@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import {onImgChange, onTitleChange, onDescriptionChange, onAddedToAnnouncement, modalClosed} from '../../actions'
-
 import './modal.css';
 
 const AnnouncementForm= ({modalClosed, errorModal, modal, onTitleChange, onDescriptionChange, onImgChange, onAddedToAnnouncement, newAnnouncement}) => {
-  console.log(newAnnouncement)
   const error = errorModal ? <div className='error'>Ошибка! Вы ввели не все данные</div> : null
   
   if(modal === 'form'){
@@ -41,6 +39,5 @@ const mapDispatchToProps = (dispatch) => {
       modalClosed: () => dispatch(modalClosed())
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementForm);

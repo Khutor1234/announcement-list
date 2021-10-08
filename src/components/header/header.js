@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { onSearch, modalOpen} from '../../actions';
 
 const Header = ({onSearch, modalOpen}) => {
-
   return (
     <header className="header">
       <div className="header-title">События во Львове 2020</div>
@@ -17,7 +16,6 @@ const Header = ({onSearch, modalOpen}) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-
   return {
       onSearch: (e) => dispatch(onSearch(e.target.value)),
       modalOpen: () => dispatch(modalOpen())

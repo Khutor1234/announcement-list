@@ -103,8 +103,8 @@ export const saveChange = (changedItem) => {
 export const onAddedToAnnouncement = (dispatch) => (e, newAnnouncement) => {
   e.preventDefault();
   if(newAnnouncement.title && newAnnouncement.description && newAnnouncement.coverImage){
+    dispatch(successfulAdding(newAnnouncement));
     dispatch(modalClosed()) 
-    dispatch(successfulAdding(newAnnouncement))
   } else {
     dispatch(errorAdding(newAnnouncement))
   }
@@ -112,7 +112,7 @@ export const onAddedToAnnouncement = (dispatch) => (e, newAnnouncement) => {
 
 export const onSaveChange = (dispatch) => (e, changedItem) => {
   e.preventDefault();
+  dispatch(saveChange(changedItem));
   dispatch(modalClosed())
-  dispatch(saveChange(changedItem))
 }
 

@@ -4,8 +4,6 @@ import {modalClosed} from '../../actions'
 import './modal.css';
 
 const SimilarAnnouncement = ({data}) => {
-  console.log(data, 'similar')
-
   const similarAnnouncements = data ? 
   <ul className="announcement-similar">
     {
@@ -21,7 +19,6 @@ const SimilarAnnouncement = ({data}) => {
   </ul>: 
   <div className='announcement-warning'>Нечего не найдено</div>
 
-  
   return(
     <div className='form-similar-item'>
       <h3>Похожие обьявления:</h3>
@@ -31,7 +28,6 @@ const SimilarAnnouncement = ({data}) => {
 }
 
 const AnnouncementDetails= ({modalClosed, modal, selectedItem, similarItem}) => {
-  
   if(modal === 'details'){
     const {title, coverImage, data, description} = selectedItem
     return (
@@ -63,6 +59,5 @@ const mapDispatchToProps = (dispatch) => {
     modalClosed: () => dispatch(modalClosed())
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementDetails);

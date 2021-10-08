@@ -1,5 +1,4 @@
 import AnnouncementListItem from '../announcement-list-item';
-
 import { connect } from 'react-redux';
 
 import './announcement-list.css';

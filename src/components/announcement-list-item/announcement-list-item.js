@@ -24,12 +24,6 @@ const AnnouncementListItem = ({announcement, onDelete, onShowDetails, onChangeIt
   );
 };
 
-// const mapStateToProps = ({announcementList: {announcements}}) => {
-//   return{
-//     announcements
-//   }
-// };
-
 const mapDispatchToProps = (dispatch) => {
   return {
     onDelete: (id) => dispatch(announcementRemovedFromCart(id)), 
