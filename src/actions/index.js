@@ -12,12 +12,6 @@ export const onSearch = (e) => {
     }
 }
 
-export const modalOpen = () => {
-  return{
-      type: 'MODAL_OPEN',
-  }
-}
-
 export const onImgChange = (img) => {
   return{
       type: 'IMG_CHANGE',
@@ -46,26 +40,79 @@ const successfulAdding = (newAnnouncement) => {
   }
 }
 
-export const errorAdding = () => {
+const errorAdding = () => {
   return{
-      type: 'ERROR',
+      type: 'ERROR_ADDING',
   }
 }
 
-const modalClosed = () => {
+export const modalClosed = () => {
   return{
     type: 'MODAL_CLOSED'
   }
 }
 
+export const modalOpen = () => {
+  return{
+      type: 'MODAL_OPEN'
+  }
+}
+
+export const onShowDetails = (announcement) => {
+  return{
+    type: 'SHOW_DETAILS',
+    payload: announcement
+  }
+}
+
+export const onChangeItem = (announcement) => {
+  return{
+    type: 'CHANGE_ITEM',
+    payload: announcement
+  }
+}
+
+export const newImg = (img) => {
+  return{
+      type: 'NEW_IMG',
+      payload: img
+  }
+}
+
+export const newTitle = (title) => {
+  return{
+      type: 'NEW_TITLE',
+      payload: title
+  }
+}
+
+export const newDescription = (description) => {
+  return{
+      type: 'NEW_DESCRIPTION',
+      payload: description
+  }
+}
+
+export const saveChange = (changedItem) => {
+  return{
+      type: 'SAVE_CHANGE',
+      payload: changedItem
+  }
+}
+
 export const onAddedToAnnouncement = (dispatch) => (e, newAnnouncement) => {
   e.preventDefault();
-  dispatch(modalClosed()) 
-  dispatch(successfulAdding(newAnnouncement))
-  // if(newAnnouncement.title && newAnnouncement.description && newAnnouncement.img){
-  //     dispatch(successfulAdding(newAnnouncement)) }
-  // } else {
-  //     dispatch(successfulAdding(newAnnouncement))
-  // }
+  if(newAnnouncement.title && newAnnouncement.description && newAnnouncement.coverImage){
+    dispatch(modalClosed()) 
+    dispatch(successfulAdding(newAnnouncement))
+  } else {
+    dispatch(errorAdding(newAnnouncement))
+  }
+}
+
+export const onSaveChange = (dispatch) => (e, changedItem) => {
+  e.preventDefault();
+  dispatch(modalClosed())
+  dispatch(saveChange(changedItem))
 }
 

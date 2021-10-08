@@ -2,8 +2,6 @@ import React from 'react';
 import './header.css';
 import { connect } from 'react-redux';
 import { onSearch, modalOpen} from '../../actions';
-import AnnouncementForm from '../announcement-form';
-
 
 const Header = ({onSearch, modalOpen}) => {
 
@@ -13,7 +11,6 @@ const Header = ({onSearch, modalOpen}) => {
       <div>
         <input className="header-search" type="search" placeholder="Поиск по сайту" onChange={e => onSearch(e)}/> 
         <button className="header-btn" onClick={() => modalOpen()}>Добавить событие</button>
-        <AnnouncementForm/>
       </div>
     </header>
   );

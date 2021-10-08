@@ -1,10 +1,10 @@
 import React from 'react';
 import './announcement-list-item.css';
 import { connect } from 'react-redux';
-import { announcementRemovedFromCart } from '../../actions';
+import { announcementRemovedFromCart, onShowDetails, onChangeItem } from '../../actions';
 
-const AnnouncementListItem = ({announcement, onDelete}) => {
-  const {title, description, data, coverImage, id} = announcement;
+const AnnouncementListItem = ({announcement, onDelete, onShowDetails, onChangeItem}) => {
+  const {title, data, coverImage, id} = announcement;
 
   return (
     <div className="announcement-list-item">
@@ -14,10 +14,10 @@ const AnnouncementListItem = ({announcement, onDelete}) => {
           <span className="announcement-title">{title}</span>
           <div className="announcement-date">{data}</div>
         </div>
-        <div className="announcement-description">{description}</div>
         <div className="announcement-buttons">
+          <button className="btn" onClick={() => onShowDetails(announcement)}>Узнать больше</button>
           <button className="btn" onClick={() => onDelete(id)}>Удалить</button>
-          <button className="btn">Редактировать</button>
+          <button className="btn" onClick={() => onChangeItem(announcement)}>Редактировать</button>
         </div>
       </div>
     </div>
@@ -33,6 +33,8 @@ const AnnouncementListItem = ({announcement, onDelete}) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onDelete: (id) => dispatch(announcementRemovedFromCart(id)), 
+    onShowDetails: (announcement) => dispatch(onShowDetails(announcement)),
+    onChangeItem: (announcement) => dispatch(onChangeItem(announcement))
   }
 }
 

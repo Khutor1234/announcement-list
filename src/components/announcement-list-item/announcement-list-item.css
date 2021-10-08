@@ -33,6 +33,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .btn{
@@ -42,4 +43,9 @@
     border-radius: 5px;
     background: #F9F0DA;
     color: #000;
+}
+
+.btn:first-child{
+    width: 280px;
+    margin-bottom: 10px;
 }
