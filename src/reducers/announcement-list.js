@@ -97,6 +97,7 @@ const updateAnnouncementList = (state, action) => {
 
       case 'SHOW_DETAILS':
         const str = payload.title.split(" ");
+        console.log(str)
         let filteredItems = [];
         for(let i = 0; i < str.length; i++){
           const items = state.announcementList.announcements.filter(element => {
@@ -104,12 +105,14 @@ const updateAnnouncementList = (state, action) => {
           })
           filteredItems.push(...items)
         }
-        const uniqueIngredients = filteredItems.filter((set => item => !set.has(item.title) && set.add(item.title))(new Set()))
+        console.log(filteredItems)
+        const uniqueItems = filteredItems.filter((set => item => !set.has(item.title) && set.add(item.title))(new Set()))
+        console.log(uniqueItems)
         return{
           ...state.announcementList,
           modal: 'details',
           selectedItem: payload,
-          similarItem: uniqueIngredients
+          similarItem: uniqueItems
         }
 
       case 'CHANGE_ITEM':
