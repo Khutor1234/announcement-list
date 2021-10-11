@@ -15,9 +15,9 @@ const AnnouncementListItem = ({announcement, onDelete, onShowDetails, onChangeIt
           <div className="announcement-date">{data}</div>
         </div>
         <div className="announcement-buttons">
-          <button className="btn" onClick={() => onShowDetails(announcement)}>Узнать больше</button>
-          <button className="btn" onClick={() => onDelete(id)}>Удалить</button>
-          <button className="btn" onClick={() => onChangeItem(announcement)}>Редактировать</button>
+          <button className="btn" onClick={() => onShowDetails(announcement)}>Learn more</button>
+          <button className="btn" onClick={() => onDelete(id)}>Delete</button>
+          <button className="btn" onClick={() => onChangeItem(announcement)}>Edit</button>
         </div>
       </div>
     </div>

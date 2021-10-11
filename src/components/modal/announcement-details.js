@@ -17,11 +17,11 @@ const SimilarAnnouncement = ({data}) => {
       })
     }
   </ul>: 
-  <div className='announcement-warning'>Нечего не найдено</div>
+  null
 
   return(
     <div className='form-similar-item'>
-      <h3>Похожие обьявления:</h3>
+      <h3>Similar announcements:</h3>
       {similarAnnouncements}
     </div>
   )

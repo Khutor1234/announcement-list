@@ -24,5 +24,6 @@
 
 .header-btn{
   margin-left: 20px;
-  color:black
+  color:black;
+  width: 200px;
 }

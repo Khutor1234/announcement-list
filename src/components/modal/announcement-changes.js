@@ -10,11 +10,11 @@ const AnnouncementChanges= ({changedItem, modal, modalClosed, newTitle, newImg, 
     return (
       <form className="form">
           <div className = 'cross'  onClick={() => modalClosed()}></div>
-          <h2 className="form-header">Редактировать событие</h2>
+          <h2 className="form-header">Edit announcement</h2>
           <input label="Название события" value = {title} className="form-title" placeholder='Название события' onChange={e => newTitle(e)}/>
           <input label="Путь к картинке" value = {coverImage} className="form-img" placeholder='Путь к картинке'onChange={e => newImg(e)}/>
           <textarea label="Описание" value={description} className="form-description" placeholder='Описание' onChange={e => newDescription(e)}/>
-          <button className="form-btn" onClick ={(e) => onSaveChange(e,changedItem)}>Сохранить</button>
+          <button className="form-btn" onClick ={(e) => onSaveChange(e,changedItem)}>Save</button>
       </form>
     );
   }

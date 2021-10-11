@@ -9,12 +9,12 @@ const AnnouncementForm= ({modalClosed, errorModal, modal, onTitleChange, onDescr
     return (
       <form className="form">
           <div className = 'cross' onClick={() => modalClosed()}></div>
-          <h2 className="form-header">Добавить новое событие</h2>
-          <input label="Название события" className="form-title" placeholder='Название события' onChange={e => onTitleChange(e)}/>
-          <input label="Путь к картинке" className="form-img" placeholder='Путь к картинке'onChange={e => onImgChange(e)}/>
-          <textarea label="Описание" className="form-description" placeholder='Описание' onChange={e => onDescriptionChange(e)}/>
+          <h2 className="form-header">Add a new announcement</h2>
+          <input label="Announcement name" className="form-title" placeholder='Announcement title' onChange={e => onTitleChange(e)}/>
+          <input label="Picture path" className="form-img" placeholder='Picture path'onChange={e => onImgChange(e)}/>
+          <textarea label="Description" className="form-description" placeholder='Description' onChange={e => onDescriptionChange(e)}/>
           {error}
-          <button className="form-btn" onClick ={(e) => onAddedToAnnouncement(e, newAnnouncement)}>Добавить</button>
+          <button className="form-btn" onClick ={(e) => onAddedToAnnouncement(e, newAnnouncement)}>Add</button>
       </form>
     );
   }

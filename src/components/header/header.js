@@ -6,10 +6,10 @@ import { onSearch, modalOpen} from '../../actions';
 const Header = ({onSearch, modalOpen}) => {
   return (
     <header className="header">
-      <div className="header-title">События во Львове 2020</div>
+      <div className="header-title">Announcements</div>
       <div>
-        <input className="header-search" type="search" placeholder="Поиск по сайту" onChange={e => onSearch(e)}/> 
-        <button className="header-btn" onClick={() => modalOpen()}>Добавить событие</button>
+        <input className="header-search" type="search" placeholder="Search" onChange={e => onSearch(e)}/> 
+        <button className="header-btn" onClick={() => modalOpen()}>Add an announcement</button>
       </div>
     </header>
   );
